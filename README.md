@@ -14,7 +14,7 @@ This repository demonstrates **Contrastive Activation Addition (CAA)** used to s
 1. For each question-answer pair in the dataset, both the neutral and sarcastic completions are run through the model
 2. The hidden state at **layer 19, last token position** is extracted for each completion
 3. The mean sarcastic activation is subtracted from the mean neutral activation to produce a **persona vector**
-4. During generation, this vector is added to the hidden state at every token step — nudging the model toward sarcasm (`+alpha`) or extra neutrality (`-alpha`)
+4. During generation, this vector is added to the hidden state at every token step, nudging the model toward sarcasm (`+alpha`) or extra neutrality (`-alpha`)
 
 The cosine similarity between sarcastic and neutral activation clusters dropped from **0.779 → 0.439** across dataset iterations, indicating stronger behavioral separation.
 
